@@ -8,10 +8,10 @@ let birthYear = document.querySelector('#birth-year')
 function imprimir(){
     
 let rango = Math.floor((Math.random() * 88) + 1)  
-let urlapi = 'http://swapi.py4e.com/api/people/' + rango
+let urlapi = 'https://swapi.co/api/people/' + rango
     
 axios.get(urlapi).then(function (response) {
-        loadpersonajes(response.data)  
+        actualizarInfo(response.data)  
     })
 
 }
@@ -24,23 +24,5 @@ function actualizarInfo (data) {
     
     
 }
-
-
-
-        function loadpersonajes() {
-            
-
-           (function(data) {
-                var ciudades = "";
-                $.each(data, function(key, value) {
-                   
-    height.innerHTML    = value
-
-                });
-                    
-            });
-        }
-  
-
 
 button.addEventListener('click' , imprimir)
